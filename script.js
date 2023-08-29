@@ -30,7 +30,13 @@ window.onload = function () {
     var buttonStop_3 = document.getElementById('button-stop-3');
     var buttonStop_4 = document.getElementById('button-stop-4');
     var buttonStop_5 = document.getElementById('button-stop-5');
+    var buttonPause = document.getElementById('button-pause')
+    var buttonPause2 = document.getElementById('button-pause-2')
+    var buttonPause3 = document.getElementById('button-pause-3')
+    var buttonPause4 = document.getElementById('button-pause-4')
+    var buttonPause5 = document.getElementById('button-pause-5')
     var buttonStopAll = document.getElementById('button-stop-all')
+    var buttonStartAll = document.getElementById('button-start-all')
     var Interval ;
     var Interval2 ;
     var Interval3 ;
@@ -54,6 +60,9 @@ window.onload = function () {
             appendMinutes.innerHTML = minutes;
     }
     
+    buttonPause.onclick = function () {
+      clearInterval(Interval)
+    }
     function startTimer1 () {
         seconds++; 
       
@@ -67,7 +76,6 @@ window.onload = function () {
       } 
       
       if (seconds > 59) {
-        console.log("minutes");
         minutes++;
         appendMinutes.innerHTML = "0" + minutes;
         seconds = 0;
@@ -91,6 +99,10 @@ window.onload = function () {
               appendSeconds_2.innerHTML = seconds2;
               appendMinutes_2.innerHTML = minutes2;
       }
+
+      buttonPause2.onclick = function () {
+        clearInterval(Interval2)
+      }
       
       function startTimer2 () {
           seconds2++; 
@@ -105,7 +117,6 @@ window.onload = function () {
         } 
         
         if (seconds2 > 59) {
-          console.log("minutes");
           minutes2++;
           appendMinutes_2.innerHTML = "0" + minutes2;
           seconds2 = 0;
@@ -129,6 +140,10 @@ window.onload = function () {
                appendSeconds_3.innerHTML = seconds3;
                appendMinutes_3.innerHTML = minutes3;
        }
+
+       buttonPause3.onclick = function () {
+        clearInterval(Interval3)
+      }
        
        function startTimer3 () {
            seconds3++; 
@@ -143,7 +158,6 @@ window.onload = function () {
          } 
          
          if (seconds3 > 59) {
-           console.log("minutes");
            minutes3++;
            appendMinutes_3.innerHTML = "0" + minutes3;
            seconds3 = 0;
@@ -167,6 +181,10 @@ window.onload = function () {
                  appendSeconds_4.innerHTML = seconds4;
                  appendMinutes_4.innerHTML = minutes4;
          }
+
+         buttonPause4.onclick = function () {
+          clearInterval(Interval4)
+        }
          
          function startTimer4 () {
              seconds4++; 
@@ -181,7 +199,6 @@ window.onload = function () {
            } 
            
            if (seconds4 > 59) {
-             console.log("minutes");
              minutes4++;
              appendMinutes_4.innerHTML = "0" + minutes4;
              seconds4 = 0;
@@ -205,6 +222,10 @@ window.onload = function () {
                  appendSeconds_5.innerHTML = seconds5;
                  appendMinutes_5.innerHTML = minutes5;
          }
+
+         buttonPause5.onclick = function () {
+          clearInterval(Interval5)
+        }
          
          function startTimer5 () {
              seconds5++; 
@@ -219,7 +240,6 @@ window.onload = function () {
            } 
            
            if (seconds5 > 59) {
-             console.log("minutes");
              minutes5++;
              appendMinutes_5.innerHTML = "0" + minutes5;
              seconds5 = 0;
@@ -259,5 +279,139 @@ window.onload = function () {
         appendMinutes_2.innerHTML = minutes2;
         appendMinutes.innerHTML = minutes;
 }
+///////////////////////////////////////////////////////////////////Start All////////////////////////////////////////////////////////////////////
+      buttonStartAll.onclick = function () {
+        Interval = setInterval(startTimer1, 1000);
+        function startTimer1 () {
+          seconds++; 
+        
+        if(seconds <= 9){
+          appendSeconds.innerHTML = "0" + seconds;
+        }
+        
+        if (seconds > 9){
+          appendSeconds.innerHTML = seconds;
+          
+        } 
+        
+        if (seconds > 59) {
+          minutes++;
+          appendMinutes.innerHTML = "0" + minutes;
+          seconds = 0;
+          appendSeconds.innerHTML = "0" + 0;
+        }
+        
+        if (minutes > 9){
+          appendMinutes.innerHTML = minutes;
+        }
+      
+      }
+    
+// ---------------------------------------------------------------
+        Interval2 = setInterval(startTimer2, 1000);
+        function startTimer2 () {
+          seconds2++; 
+        
+        if(seconds2 <= 9){
+            appendSeconds_2.innerHTML = "0" + seconds2;
+        }
+        
+        if (seconds2 > 9){
+            appendSeconds_2.innerHTML = seconds2;
+          
+        } 
+        
+        if (seconds2 > 59) {
+          minutes2++;
+          appendMinutes_2.innerHTML = "0" + minutes2;
+          seconds2 = 0;
+          appendSeconds_2.innerHTML = "0" + 0;
+        }
+        
+        if (minutes2 > 9){
+            appendMinutes_2.innerHTML = minutes2;
+        }
+      
+      }
+// ---------------------------------------------------------------
+      Interval3 = setInterval(startTimer3, 1000);
+      function startTimer3 () {
+        seconds3++; 
 
-   }
+      if(seconds3 <= 9){
+        appendSeconds_3.innerHTML = "0" + seconds3;
+      }
+
+      if (seconds3 > 9){
+        appendSeconds_3.innerHTML = seconds3;
+  
+      } 
+
+      if (seconds3 > 59) {
+        minutes3++;
+        appendMinutes_3.innerHTML = "0" + minutes3;
+        seconds3 = 0;
+        appendSeconds_3.innerHTML = "0" + 0;
+      }
+
+      if (minutes3 > 9){
+        appendMinutes_3.innerHTML = minutes3;
+      }
+
+      }
+// ---------------------------------------------------------------
+      Interval4 = setInterval(startTimer4, 1000);
+      function startTimer4 () {
+        seconds4++; 
+
+      if(seconds4 <= 9){
+        appendSeconds_4.innerHTML = "0" + seconds4;
+      }
+
+      if (seconds4 > 9){
+        appendSeconds_4.innerHTML = seconds4;
+
+      } 
+
+      if (seconds4 > 59) {
+        minutes4++;
+        appendMinutes_4.innerHTML = "0" + minutes4;
+        seconds4 = 0;
+        appendSeconds_4.innerHTML = "0" + 0;
+      }
+
+      if (minutes4 > 9){
+        appendMinutes_4.innerHTML = minutes4;
+      }
+
+      }
+// ---------------------------------------------------------------
+      Interval5 = setInterval(startTimer5, 1000);
+      function startTimer5 () {
+        seconds5++; 
+
+      if(seconds5 <= 9){
+        appendSeconds_5.innerHTML = "0" + seconds5;
+      }
+
+      if (seconds5 > 9){
+        appendSeconds_5.innerHTML = seconds5;
+
+      } 
+
+      if (seconds5 > 59) {
+        minutes5++;
+        appendMinutes_5.innerHTML = "0" + minutes5;
+        seconds5 = 0;
+        appendSeconds_5.innerHTML = "0" + 0;
+      }
+
+      if (minutes5 > 9){
+        appendMinutes_5.innerHTML = minutes5;
+      }
+
+      }
+
+
+      } 
+}
